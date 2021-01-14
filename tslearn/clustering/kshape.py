@@ -286,7 +286,7 @@ class KShape(ClusterMixin, TimeSeriesCentroidBasedClusteringMixin,
                         ['cluster_centers_', 'norms_', 'norms_centroids_'])
 
         X_ = check_dims(X, X_fit_dims=self.cluster_centers_.shape)
-        X_ = TimeSeriesScalerMeanVariance(mu=0., std=1.).fit_transform(X_)
+        # X_ = TimeSeriesScalerMeanVariance(mu=0., std=1.).fit_transform(X_)
         dists = self._cross_dists(X_)
         return dists.argmin(axis=1)
         
